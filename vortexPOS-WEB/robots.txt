@@ -1,0 +1,5 @@
+# vortexPOS — indexación abierta: queremos que Google entre a todo.
+User-agent: *
+Allow: /
+
+Sitemap: https://vortexslbooking-cmyk.github.io/sitemap.xml
