@@ -200,7 +200,13 @@
   }
   .nav-cta-btn:hover{background:var(--accent-hover);box-shadow:var(--shadow-glow);transform:translateY(-1px)}
 
-  @media(max-width:768px){.nav-links{display:none}}
+  @media(max-width:768px){
+    /* En móvil ocultamos los enlaces informativos pero MANTENEMOS el botón de
+       acción visible: es por donde entrará Carlos desde un enlace de WhatsApp. */
+    .nav-links{gap:0}
+    .nav-links li:not(:last-child){display:none}
+    .nav-cta-btn{padding:.5rem 1.1rem;font-size:.8rem}
+  }
 
   /* ═══ Hero ═══ */
   .hero{
@@ -582,6 +588,41 @@
   }
   .blob-1{width:400px;height:400px;background:var(--accent);top:-100px;right:-100px}
   .blob-2{width:300px;height:300px;background:#06b6d4;bottom:-80px;left:-80px;opacity:.08}
+
+  /* ═══ Sé el primero (trato del fundador) ═══ */
+  .first-section{background:#fff}
+  .first-header{text-align:center;margin-bottom:3.5rem}
+  .first-header h2{margin-bottom:.75rem}
+  .first-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:900px;margin:0 auto}
+  .first-card{
+    background:var(--slate-50);border:1px solid var(--slate-200);
+    border-radius:var(--radius-lg);padding:1.75rem;display:flex;gap:1.1rem;
+    transition:all .35s cubic-bezier(.22,1,.36,1);
+  }
+  .first-card:hover{border-color:var(--accent);box-shadow:var(--shadow-md);transform:translateY(-4px)}
+  .first-ico{
+    width:46px;height:46px;border-radius:var(--radius-sm);flex-shrink:0;
+    background:var(--accent-light);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-size:1.3rem;
+  }
+  .first-card h3{font-size:1rem;margin-bottom:.35rem}
+  .first-card p{font-size:.88rem;color:var(--slate-500);line-height:1.6}
+  @media(max-width:640px){.first-grid{grid-template-columns:1fr}}
+
+  /* ═══ Barra fija de acción — solo móvil ═══
+     La mayoría de hosteleros abren la página desde el móvil (enlace de
+     WhatsApp). Esta barra mantiene el botón de "probar" siempre a mano
+     sin tener que volver arriba. */
+  .mobile-cta-bar{display:none}
+  @media(max-width:768px){
+    .mobile-cta-bar{
+      display:flex;position:fixed;left:0;right:0;bottom:0;z-index:900;
+      padding:.7rem 1rem;background:rgba(15,23,42,.96);
+      backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.08);
+    }
+    .mobile-cta-bar .btn{width:100%;justify-content:center;box-shadow:0 4px 20px rgba(37,99,235,.4)}
+    body{padding-bottom:4.75rem}
+  }
 </style>
 </head>
 <body>
@@ -609,17 +650,17 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content reveal">
-        <div class="hero-badge"><span class="pulse"></span> 30 días de prueba gratuita</div>
+        <div class="hero-badge"><span class="pulse"></span> Nuevos en la Axarquía · 30 días gratis</div>
         <h1>El TPV que un camarero entiende en <span class="gradient-text">10 minutos</span></h1>
         <p>
-          Controla tu bar desde cualquier dispositivo. Cierre de caja en 30 segundos.
-          Sin formación. Sin hardware. Sin permanencia.
+          Tomas la comanda, la cocina la ve al momento y cierras la caja del día en 30 segundos.
+          Todo desde el móvil o la tablet que ya tienes. Sin cursos, sin aparatos caros y sin permanencia.
         </p>
         <div class="hero-actions">
           <a href="#" class="btn btn-primary" onclick="openLeadModal();return false">Comenzar prueba gratuita →</a>
           <a href="#features" class="btn btn-outline">Ver funcionalidades</a>
         </div>
-        <div class="hero-guarantee">🛡️ Sin tarjeta · Cancela cuando quieras · 149 €/mes</div>
+        <div class="hero-guarantee">🛡️ 30 días gratis · Sin tarjeta · Sin permanencia · 149 €/mes</div>
       </div>
       <div class="hero-visual reveal-right">
         <div class="device-frame">
@@ -659,14 +700,14 @@
           </div>
         </div>
         <div class="hero-float-card top">
-          <div class="hf-badge"><span class="check">✓</span> Onboarding completado</div>
-          <div class="hf-label" style="margin-top:.3rem;color:var(--cyan-500)"><span class="speed">10 min</span> — récord del día</div>
+          <div class="hf-badge"><span class="check">✓</span> Onboarding en 10 minutos</div>
+          <div class="hf-label" style="margin-top:.3rem;color:var(--cyan-500)">De la caja al primer ticket, sin cursillos</div>
         </div>
         <div class="hero-float-card bottom">
           <div class="hf-icon">📊</div>
           <div>
-            <div class="hf-stat">+18%</div>
-            <div class="hf-label">Margen detectado en 30 días</div>
+            <div class="hf-stat" style="font-size:1.1rem;line-height:1.15">Ventas<br>por plato</div>
+            <div class="hf-label">De un vistazo</div>
           </div>
         </div>
       </div>
@@ -696,12 +737,12 @@
       <div class="problem-card">
         <div class="problem-icon">📉</div>
         <h3>Cero visibilidad financiera</h3>
-        <p>No sabes qué plato te da margen, qué camarero vende más, ni si te falta dinero en caja.</p>
+        <p>No sabes qué platos se venden más, qué camarero factura más, ni si te falta dinero en caja al cerrar.</p>
       </div>
       <div class="problem-card">
         <div class="problem-icon">⚠️</div>
-        <h3>VeriFactu se acerca</h3>
-        <p>Tu caja registradora de 2008 no cumple. Y cuando Hacienda pregunte, no tendrás respuesta.</p>
+        <h3>La comanda de papel se pierde</h3>
+        <p>El pedido mal apuntado, la cuenta que no cuadra, el camarero corriendo a cocina. Cada error es una propina menos y un cliente que no vuelve.</p>
       </div>
     </div>
   </div>
@@ -746,7 +787,7 @@
     <div class="features-header reveal">
       <span class="section-label">Funcionalidades</span>
       <h2>Todo lo que necesitas. Nada de lo que no.</h2>
-      <p class="section-subtitle" style="margin:1rem auto 0">El 90% de las funciones de otros TPVs no las vas a usar nunca.</p>
+      <p class="section-subtitle" style="margin:1rem auto 0">La mayoría de TPVs se llenan de funciones que en tu barra no vas a tocar. Aquí solo está lo que usas cada día.</p>
     </div>
     <div class="features-grid stagger">
       <div class="feature-item">
@@ -800,19 +841,19 @@
   <div class="container">
     <div class="how-header reveal">
       <span class="section-label">Onboarding</span>
-      <h2>En 5 minutos. En serio.</h2>
+      <h2>En 10 minutos. En serio.</h2>
       <p class="section-subtitle" style="margin:1rem auto 0">Sin instalador. Sin cita previa. Sin llamar al hijo de un amigo.</p>
     </div>
     <div class="how-track stagger">
       <div class="how-step">
         <div class="how-num">1</div>
-        <h3>Te registras</h3>
-        <p>Email y contraseña. Sin tarjeta. Sin compromiso. 30 días de prueba.</p>
+        <h3>Nos escribes</h3>
+        <p>Un formulario y listo. Sin tarjeta y sin compromiso. Arrancan tus 30 días gratis.</p>
       </div>
       <div class="how-step">
         <div class="how-num">2</div>
-        <h3>Añades tu carta</h3>
-        <p>Productos, precios, mesas. En minutos está todo listo para el servicio.</p>
+        <h3>Te lo dejamos montado</h3>
+        <p>Metemos tu carta, tus precios y tus mesas contigo. En un rato está listo para el servicio.</p>
       </div>
       <div class="how-step">
         <div class="how-num">3</div>
@@ -840,8 +881,8 @@
         <div class="stat-label">Coste de cancelación.<br>Sin permanencia.</div>
       </div>
       <div>
-        <div class="stat-value">3×</div>
-        <div class="stat-label">Más completo que Qamarero.<br>149 € todo incluido.</div>
+        <div class="stat-value">1</div>
+        <div class="stat-label">Un precio, todo dentro.<br>Comandas, cocina, caja y soporte.</div>
       </div>
     </div>
   </div>
@@ -861,7 +902,6 @@
         <div class="pricing-name">🥉 Esencia</div>
         <div class="pricing-desc">Para el bar de toda la vida</div>
         <div class="pricing-amount"><span class="currency">€</span>149<span class="period">/mes</span></div>
-        <div class="pricing-yearly-text">119 €/mes con pago anual</div>
         <ul class="pricing-features">
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Panel Camarero completo</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Panel Cocina digital</li>
@@ -879,14 +919,13 @@
         <div class="pricing-name">🥈 Crecimiento</div>
         <div class="pricing-desc">Para el restaurante que crece</div>
         <div class="pricing-amount"><span class="currency">€</span>199<span class="period">/mes</span></div>
-        <div class="pricing-yearly-text">159 €/mes con pago anual</div>
         <ul class="pricing-features">
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <strong>Todo lo del plan Esencia</strong></li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Hasta 30 mesas · 15 usuarios</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Hasta 500 productos</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Top productos más vendidos</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Exportación CSV/Excel</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Soporte prioritario WhatsApp</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Soporte prioritario</li>
         </ul>
         <a href="#" class="btn btn-secondary" onclick="openLeadModal('Crecimiento');return false">Probar gratis</a>
       </div>
@@ -896,14 +935,13 @@
         <div class="pricing-name">🥇 Profesional</div>
         <div class="pricing-desc">Para el negocio que escala</div>
         <div class="pricing-amount"><span class="currency">€</span>299<span class="period">/mes</span></div>
-        <div class="pricing-yearly-text">239 €/mes con pago anual</div>
         <ul class="pricing-features">
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <strong>Todo lo del plan Crecimiento</strong></li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Mesas y productos ilimitados</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Usuarios ilimitados</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Informes avanzados</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Mapa visual de mesas</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Soporte telefónico prioritario</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.3 4.3L6 11.6L2.7 8.3" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Soporte prioritario</li>
         </ul>
         <a href="#" class="btn btn-outline" onclick="openLeadModal('Profesional');return false">Probar gratis</a>
       </div>
@@ -911,54 +949,44 @@
   </div>
 </section>
 
-<!-- ═══ Testimonials ═══ -->
-<section>
+<!-- ═══ Sé el primero (trato del fundador) ═══
+     Sustituye a los testimonios: aún no hay clientes, así que en vez de
+     prueba social inventada usamos el trato honesto de "sé de los primeros".
+     ══════════════════════════════════════════════════════════════════════ -->
+<section class="first-section">
   <div class="container">
-    <div class="testimonials-header reveal">
-      <span class="section-label">Testimonios</span>
-      <h2>Lo dicen ellos, no nosotros</h2>
+    <div class="first-header reveal">
+      <span class="section-label">Sé de los primeros</span>
+      <h2>Aún no tenemos cientos de clientes.<br>Por eso al primero lo cuidamos como a nadie.</h2>
+      <p class="section-subtitle" style="margin:1rem auto 0">Empezamos aquí, en la Axarquía, y buscamos los primeros bares con los que crecer. Si eres uno de ellos, este es el trato.</p>
     </div>
-    <div class="testimonials-grid stagger">
-      <div class="testimonial-card">
-        <div class="t-stars">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-        </div>
-        <blockquote>"Llevo 22 años con la caja registradora. Mi hija me convenció para probar esto. Ahora sé lo que vendo cada día. Y duermo más tranquilo."</blockquote>
-        <div class="t-author">
-          <div class="t-avatar">M</div>
-          <div><strong>Manolo</strong><span>Bar La Esquina, Valencia</span></div>
+    <div class="first-grid stagger">
+      <div class="first-card">
+        <div class="first-ico">🤝</div>
+        <div>
+          <h3>Te lo monto yo, en persona</h3>
+          <p>Me paso por tu bar o lo hacemos por videollamada: te meto la carta, los precios y las mesas y lo dejo funcionando. Tú no te peleas con nada.</p>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="t-stars">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-        </div>
-        <blockquote>"Tres ubicaciones, un solo sistema. En verano a tope, en invierno pauso la suscripción. Es justo lo que necesitaba para el food truck."</blockquote>
-        <div class="t-author">
-          <div class="t-avatar" style="background:rgba(6,182,212,.1);color:var(--cyan-600)">J</div>
-          <div><strong>Javi</strong><span>Tacos Nómadas, Madrid</span></div>
+      <div class="first-card">
+        <div class="first-ico">💶</div>
+        <div>
+          <h3>No pagas hasta que funcione</h3>
+          <p>30 días gratis y sin tarjeta por delante. Si en tu barra, en tu día a día, no te sirve, no me debes ni un euro.</p>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="t-stars">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.88 5.78H15l-4.12 3 1.56 4.78L8 11.56l-4.44 3L5.12 9.78 1 6.78h5.12z"/></svg>
+      <div class="first-card">
+        <div class="first-ico">📍</div>
+        <div>
+          <h3>Estamos aquí al lado</h3>
+          <p>Nada de multinacionales a 900 kilómetros. Somos de la Axarquía. Si algo se tuerce, me tienes cerca.</p>
         </div>
-        <blockquote>"Mis camareros tardaban una semana con el TPV viejo. Con este, en la misma tarde estaban cobrando. Por 149 € al mes con todo incluido, es un regalo."</blockquote>
-        <div class="t-author">
-          <div class="t-avatar" style="background:rgba(16,185,129,.1);color:#059669">Mt</div>
-          <div><strong>Marta</strong><span>La Tasquita, Málaga</span></div>
+      </div>
+      <div class="first-card">
+        <div class="first-ico">💬</div>
+        <div>
+          <h3>Hablas con el fundador, no con un robot</h3>
+          <p>Sin centralitas ni tickets de soporte. Me escribes y te contesto yo. Directo y en cristiano.</p>
         </div>
       </div>
     </div>
@@ -979,7 +1007,7 @@
       </div>
       <div class="faq-item">
         <h3><span class="q-icon">Q</span> "Es caro."</h3>
-        <p>149 € al mes con todo incluido: onboarding, soporte WhatsApp, IA y formación. Qamarero cuesta 119 € y no incluye nada de esto. Pruébalo 30 días gratis.</p>
+        <p>149 € al mes con todo dentro: onboarding, formación y soporte directo con el fundador. Sin módulos que se pagan aparte y sin permanencia. Pruébalo 30 días gratis.</p>
       </div>
       <div class="faq-item">
         <h3><span class="q-icon">Q</span> "¿Y si se cae internet?"</h3>
@@ -987,7 +1015,7 @@
       </div>
       <div class="faq-item">
         <h3><span class="q-icon">Q</span> "¿Cumple con VeriFactu?"</h3>
-        <p>Todos los registros de caja quedan guardados con trazabilidad completa. Cuando VeriFactu sea obligatorio, tu negocio estará preparado.</p>
+        <p>vortexPOS gestiona tus comandas, tu sala y el control interno de la caja del día a día. No emite tus facturas oficiales ni sustituye a tu sistema de facturación, así que VeriFactu no le aplica en ese uso. VeriFactu será obligatorio en hostelería entre enero y julio de 2027 (según tu forma jurídica) para el sistema con el que facturas; cuando se acerque, hablamos de cómo encajarlo.</p>
       </div>
       <div class="faq-item">
         <h3><span class="q-icon">Q</span> "No quiero atarme a una empresa de software."</h3>
@@ -1006,7 +1034,7 @@
   <div class="container">
     <div class="cta-content reveal">
       <h2>30 días. Sin tarjeta. Sin permanencia.</h2>
-      <p>Pruébalo. Si en un mes no te convence, te vas. Pero apostamos a que no querrás volver al boli y la calculadora.</p>
+      <p>Pruébalo sin arriesgar nada. Te lo monta el fundador en persona y te atiende él mismo. Si en un mes no te convence, te vas — pero apostamos a que no querrás volver al boli y la calculadora.</p>
       <a href="#" class="btn btn-primary" style="font-size:1.05rem;padding:1rem 2.5rem" onclick="openLeadModal();return false">Comenzar prueba gratuita →</a>
       <div class="cta-guarantee">🛡️ Garantía de devolución del primer mes si no te convence.</div>
     </div>
@@ -1016,10 +1044,15 @@
 <!-- ═══ Footer ═══ -->
 <footer>
   <div class="container">
-    <p>© 2026 vortexPOS · <a href="mailto:vortex.s.l.booking@gmail.com">vortex.s.l.booking@gmail.com</a> · <a href="#">WhatsApp</a></p>
+    <p>© 2026 vortexPOS · <a href="mailto:vortex.s.l.booking@gmail.com">vortex.s.l.booking@gmail.com</a></p>
     <p style="margin-top:.5rem">Hecho en España. Para hosteleros, por gente que entiende la barra.</p>
   </div>
 </footer>
+
+<!-- ═══ Barra fija de acción (solo móvil) ═══ -->
+<div class="mobile-cta-bar">
+  <a href="#" class="btn btn-primary" onclick="openLeadModal();return false">Probar gratis 30 días →</a>
+</div>
 
 <!-- ═══ Lead Modal ═══ -->
 <div id="leadModal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:1.5rem">
@@ -1036,6 +1069,7 @@
       .lm-body{padding:0 2rem 2rem}
       .lm-field{margin-bottom:1rem}
       .lm-field label{display:block;font-size:.8rem;font-weight:600;color:var(--slate-700);margin-bottom:.35rem}
+      .lm-hint{font-size:.72rem;color:var(--slate-400);margin-top:.35rem;line-height:1.4}
       .lm-field input,.lm-field select{width:100%;padding:.75rem 1rem;border:1.5px solid var(--slate-200);border-radius:12px;font-size:.9rem;font-family:inherit;transition:border-color .2s,box-shadow .2s;background:#fff}
       .lm-field input:focus,.lm-field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
       .lm-submit{width:100%;padding:.9rem;border:none;border-radius:100px;background:var(--accent);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .25s;margin-top:.5rem}
@@ -1057,8 +1091,8 @@
     <div id="leadFormContent">
       <div class="lm-header">
         <div class="lm-icon">🚀</div>
-        <h3>Empieza tu prueba gratuita</h3>
-        <p>30 días sin tarjeta. Sin permanencia. Rellenamos tu cuenta y te contactamos.</p>
+        <h3>Pruébalo gratis 30 días</h3>
+        <p>Sin tarjeta y sin permanencia. Te escribe el fundador en persona, te lo deja montado y solo sigues si te funciona.</p>
       </div>
       <div class="lm-body">
         <form id="leadForm" onsubmit="submitLead(event)">
@@ -1071,8 +1105,9 @@
             <input type="email" id="leadEmail" name="email" required placeholder="manolo@barlaesquina.es">
           </div>
           <div class="lm-field">
-            <label for="leadPhone">Teléfono / WhatsApp *</label>
+            <label for="leadPhone">Teléfono *</label>
             <input type="tel" id="leadPhone" name="phone" required placeholder="+34 600 123 456">
+            <div class="lm-hint">Te escribimos por correo, sin llamadas pesadas ni compromiso.</div>
           </div>
           <div class="lm-field">
             <label for="leadBusiness">Nombre del negocio</label>
@@ -1107,8 +1142,8 @@
     </div>
     <div id="leadSuccess" class="lm-success">
       <div class="check">✓</div>
-      <h3>¡Solicitud recibida!</h3>
-      <p>Hemos guardado tus datos. Te contactaremos en menos de 24 horas para activar tu prueba.</p>
+      <h3>¡Recibido! Ya está.</h3>
+      <p>Te escribe el fundador en persona en menos de 24 horas (casi siempre el mismo día) para dejarte la prueba montada. Sin compromiso.</p>
       <button class="lm-submit" style="max-width:200px;margin:0 auto;display:block" onclick="closeLeadModal()">Cerrar</button>
     </div>
   </div>
