@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vortex Agencia — Que te encuentren en Google | Axarquía</title>
+<meta name="description" content="Ponemos tu negocio donde la gente lo busca: ficha de Google, fotos, reseñas y una web que se ve bien en el móvil. Desde 350 € + 69 €/mes. Somos de Vélez-Málaga.">
+<meta name="author" content="VORTEX S.L.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://vortexslbooking-cmyk.github.io/agencia/">
+<meta name="theme-color" content="#06b6d4">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2306b6d4'/%3E%3Cpath d='M16 18h9l7 20 7-20h9L36 50h-8z' fill='white'/%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vortex Agencia">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://vortexslbooking-cmyk.github.io/agencia/">
+<meta property="og:title" content="Vortex Agencia — Que te encuentren en Google">
+<meta property="og:description" content="Ficha de Google, fotos, reseñas y web para móvil. Para negocios de la Axarquía. Desde 350 € + 69 €/mes.">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Vortex Agencia",
+  "description": "Agencia digital para negocios locales: ficha de Google, web móvil, reseñas y redes.",
+  "url": "https://vortexslbooking-cmyk.github.io/agencia/",
+  "email": "vortex.s.l.booking@gmail.com",
+  "areaServed": ["Vélez-Málaga","Torre del Mar","Caleta de Vélez","Algarrobo","Axarquía"],
+  "parentOrganization": {"@type":"Organization","name":"VORTEX S.L."}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   Vortex Agencia — misma familia de marca que vortexPOS
+   (Inter, azul #2563eb, cian #38bdf8) pero con personalidad
+   propia: fondo claro, cian como color principal y más
+   movimiento. Así el cliente reconoce a Vortex sin confundir
+   las dos ofertas.
+   ═══════════════════════════════════════════════════════════ */
+:root{
+  --azul:#2563eb; --azul-osc:#1e3a8a; --cian:#06b6d4; --cian-cl:#38bdf8;
+  --tinta:#0f172a; --tinta-sv:#334155; --gris:#64748b; --linea:#e2e8f0;
+  --crema:#f8fafc; --blanco:#fff; --verde:#10b981; --ambar:#f59e0b;
+  --r:20px; --sombra:0 10px 40px -12px rgba(15,23,42,.18);
+  --sombra-f:0 20px 60px -15px rgba(6,182,212,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--tinta);
+     background:var(--blanco);line-height:1.6;overflow-x:hidden}
+.env{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+
+/* ── Animaciones (el "toque fresco") ── */
+@keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes entra{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes brilla{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes pulso{0%,100%{opacity:1}50%{opacity:.45}}
+.rev{opacity:0}
+.rev.on{animation:entra .7s cubic-bezier(.22,1,.36,1) forwards}
+.rev.d1{animation-delay:.1s}.rev.d2{animation-delay:.2s}.rev.d3{animation-delay:.3s}
+
+/* ── Navegación ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:16px 0;
+    background:rgba(255,255,255,.85);backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;transition:.3s}
+nav.baja{border-bottom-color:var(--linea);box-shadow:0 4px 20px -8px rgba(15,23,42,.1)}
+.nav-in{display:flex;align-items:center;gap:14px}
+.marca{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;
+       letter-spacing:-.02em;text-decoration:none}
+.marca .v{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+          background:linear-gradient(135deg,var(--cian),var(--azul));color:#fff;
+          font-weight:900;font-size:20px;box-shadow:0 6px 18px -6px rgba(6,182,212,.6)}
+.marca span{color:var(--cian)}
+.nav-sp{flex:1}
+.nav-lk{display:none;gap:28px;font-size:14.5px;font-weight:600;color:var(--tinta-sv)}
+.nav-lk a{text-decoration:none;transition:.2s}
+.nav-lk a:hover{color:var(--cian)}
+@media(min-width:900px){.nav-lk{display:flex}}
+
+/* ── Botones ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+     padding:14px 26px;border-radius:100px;font-weight:700;font-size:15px;
+     text-decoration:none;border:none;cursor:pointer;transition:.25s;white-space:nowrap}
+.btn-p{background:linear-gradient(135deg,var(--cian),var(--azul));color:#fff;
+       box-shadow:0 10px 26px -10px rgba(6,182,212,.75)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 16px 34px -10px rgba(6,182,212,.85)}
+.btn-b{background:var(--blanco);color:var(--tinta);border:1.5px solid var(--linea)}
+.btn-b:hover{border-color:var(--cian);color:var(--cian)}
+.btn-g{background:var(--tinta);color:#fff}
+.btn-g:hover{transform:translateY(-2px)}
+
+/* ── Portada ── */
+.port{position:relative;padding:150px 0 90px;overflow:hidden;
+      background:linear-gradient(170deg,#ecfeff 0%,#f8fafc 45%,#fff 100%)}
+.mancha{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none}
+.m1{width:480px;height:480px;background:#a5f3fc;top:-160px;right:-120px;animation:flota 9s ease-in-out infinite}
+.m2{width:380px;height:380px;background:#bfdbfe;bottom:-140px;left:-100px;animation:flota 11s ease-in-out infinite reverse}
+.port-in{position:relative;z-index:2;display:grid;gap:56px;align-items:center}
+@media(min-width:960px){.port-in{grid-template-columns:1.05fr .95fr}}
+.chip{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:100px;
+      background:var(--blanco);border:1px solid #a5f3fc;font-size:13.5px;font-weight:700;
+      color:#0e7490;box-shadow:0 4px 14px -6px rgba(6,182,212,.35);margin-bottom:22px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--verde);animation:pulso 2s infinite}
+h1{font-size:clamp(2.3rem,5.5vw,3.8rem);font-weight:900;letter-spacing:-.035em;
+   line-height:1.06;margin-bottom:22px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--cian),var(--azul),var(--cian));
+      background-size:200% auto;-webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;animation:brilla 4s linear infinite}
+.entrada{font-size:clamp(1.05rem,2vw,1.22rem);color:var(--tinta-sv);max-width:560px;margin-bottom:32px}
+.acciones{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.mini{font-size:13.5px;color:var(--gris);font-weight:600;display:flex;align-items:center;gap:8px}
+
+/* ── Móvil de la portada ── */
+.tel{position:relative;margin:0 auto;width:min(300px,86vw);animation:flota 7s ease-in-out infinite}
+.tel-m{background:var(--tinta);border-radius:38px;padding:11px;box-shadow:0 32px 70px -20px rgba(15,23,42,.45)}
+.tel-p{background:#fff;border-radius:28px;overflow:hidden}
+.tel-bar{background:var(--crema);padding:11px 14px;display:flex;align-items:center;gap:8px;
+         border-bottom:1px solid var(--linea)}
+.tel-bar .lupa{width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid var(--linea);
+               display:grid;place-items:center;font-size:12px}
+.tel-bar .txt{font-size:12px;color:var(--gris);font-weight:600}
+.res{padding:14px;border-bottom:1px solid var(--linea)}
+.res.tuyo{background:linear-gradient(90deg,#ecfeff,#fff);border-left:4px solid var(--cian)}
+.res-n{font-weight:800;font-size:14px;margin-bottom:3px}
+.res-e{font-size:12px;color:var(--ambar);font-weight:700}
+.res-d{font-size:11.5px;color:var(--gris);margin-top:3px}
+.eti{position:absolute;background:#fff;border-radius:13px;padding:11px 15px;
+     box-shadow:var(--sombra);font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:9px}
+.eti.a{top:16%;left:-28px;animation:flota 6s ease-in-out infinite}
+.eti.b{bottom:14%;right:-24px;animation:flota 8s ease-in-out infinite reverse}
+.eti .pt{width:9px;height:9px;border-radius:50%}
+@media(max-width:640px){.eti{display:none}}
+
+/* ── Secciones ── */
+section{padding:88px 0}
+.sec-cab{text-align:center;max-width:660px;margin:0 auto 52px}
+.eyebrow{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.14em;
+         text-transform:uppercase;color:var(--cian);margin-bottom:14px}
+h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:900;letter-spacing:-.03em;
+   line-height:1.15;margin-bottom:14px}
+.sub{color:var(--tinta-sv);font-size:1.04rem}
+
+/* ── Problemas ── */
+.probs{background:var(--crema)}
+.rej{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(268px,1fr))}
+.tar{background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:30px;
+     transition:.3s;position:relative;overflow:hidden}
+.tar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+            background:linear-gradient(90deg,var(--cian),var(--azul));transform:scaleX(0);
+            transform-origin:left;transition:.35s}
+.tar:hover{transform:translateY(-6px);box-shadow:var(--sombra);border-color:transparent}
+.tar:hover::after{transform:scaleX(1)}
+.ico{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;
+     font-size:24px;margin-bottom:18px;background:#ecfeff}
+.tar h3{font-size:1.14rem;font-weight:800;margin-bottom:9px;letter-spacing:-.01em}
+.tar p{color:var(--tinta-sv);font-size:.96rem}
+
+/* ── Cómo ── */
+.pasos{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));counter-reset:p}
+.paso{position:relative;padding-top:16px}
+.paso::before{counter-increment:p;content:counter(p);position:absolute;top:-16px;left:-6px;
+              font-size:82px;font-weight:900;color:#ecfeff;line-height:1;z-index:0}
+.paso-in{position:relative;z-index:1}
+.paso h3{font-size:1.12rem;font-weight:800;margin-bottom:8px}
+.paso p{color:var(--tinta-sv);font-size:.95rem}
+
+/* ── Precios ── */
+.precios{background:linear-gradient(175deg,#f8fafc,#ecfeff)}
+.planes{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));max-width:880px;margin:0 auto}
+.plan{background:#fff;border:1.5px solid var(--linea);border-radius:24px;padding:34px 30px;
+      display:flex;flex-direction:column;transition:.3s;position:relative}
+.plan:hover{transform:translateY(-6px);box-shadow:var(--sombra)}
+.plan.top{border-color:var(--cian);box-shadow:var(--sombra-f)}
+.lazo{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+      background:linear-gradient(135deg,var(--cian),var(--azul));color:#fff;
+      padding:6px 18px;border-radius:100px;font-size:12px;font-weight:800;white-space:nowrap}
+.plan-n{font-size:1.28rem;font-weight:900;margin-bottom:5px}
+.plan-d{color:var(--gris);font-size:.9rem;margin-bottom:20px}
+.plan-p{display:flex;align-items:baseline;gap:5px;margin-bottom:5px}
+.plan-p .num{font-size:2.6rem;font-weight:900;letter-spacing:-.04em}
+.plan-p .un{font-size:1rem;color:var(--gris);font-weight:700}
+.plan-m{font-size:.9rem;color:var(--tinta-sv);font-weight:700;margin-bottom:22px}
+.plan-m b{color:var(--cian)}
+.lista{list-style:none;margin-bottom:26px;flex:1}
+.lista li{display:flex;gap:10px;padding:8px 0;font-size:.94rem;color:var(--tinta-sv);align-items:flex-start}
+.lista li::before{content:"✓";color:var(--verde);font-weight:900;flex:none}
+.plan .btn{width:100%}
+
+/* ── Honestidad ── */
+.hon{max-width:760px;margin:52px auto 0;background:#fff;border:1.5px solid var(--linea);
+     border-radius:var(--r);padding:32px}
+.hon h3{font-size:1.06rem;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.hon-g{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.hon-i{display:flex;gap:10px;font-size:.92rem;color:var(--tinta-sv);align-items:flex-start}
+.hon-i .x{color:#ef4444;font-weight:900;flex:none}
+
+/* ── Cercanía ── */
+.cerca{background:var(--tinta);color:#fff;position:relative;overflow:hidden}
+.cerca .mancha{opacity:.25}
+.cerca .c1{width:420px;height:420px;background:var(--cian);top:-140px;left:-110px}
+.cerca h2{color:#fff}
+.cerca .sub{color:#94a3b8}
+.rej-c{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));position:relative;z-index:2}
+.tar-c{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);
+       border-radius:var(--r);padding:26px;transition:.3s}
+.tar-c:hover{background:rgba(6,182,212,.12);border-color:var(--cian);transform:translateY(-5px)}
+.tar-c .ico{background:rgba(6,182,212,.16)}
+.tar-c h3{font-size:1.06rem;font-weight:800;margin-bottom:8px;color:#fff}
+.tar-c p{color:#cbd5e1;font-size:.93rem}
+
+/* ── Cierre ── */
+.cta{text-align:center;background:linear-gradient(160deg,#ecfeff,#fff)}
+.cta h2{margin-bottom:16px}
+.cta .sub{margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
+.correo{display:inline-flex;align-items:center;gap:11px;background:#fff;border:1.5px solid var(--linea);
+        border-radius:100px;padding:13px 24px;font-weight:700;font-size:15px;text-decoration:none;
+        transition:.25s;margin-top:8px}
+.correo:hover{border-color:var(--cian);color:var(--cian);transform:translateY(-2px)}
+
+/* ── Pie ── */
+footer{background:var(--tinta);color:#94a3b8;padding:44px 0;text-align:center;font-size:.9rem}
+footer a{color:var(--cian-cl);text-decoration:none}
+footer .otro{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);font-size:.86rem}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rev{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="env nav-in">
+    <a href="#" class="marca"><span class="v">V</span>Vortex <span>Agencia</span></a>
+    <div class="nav-sp"></div>
+    <div class="nav-lk">
+      <a href="#problema">El problema</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#precios">Precios</a>
+    </div>
+    <a href="#contacto" class="btn btn-p" style="padding:11px 20px;font-size:14px">Escríbenos</a>
+  </div>
+</nav>
+
+<!-- ═══ Portada ═══ -->
+<header class="port">
+  <div class="mancha m1"></div><div class="mancha m2"></div>
+  <div class="env port-in">
+    <div class="rev on">
+      <div class="chip"><i></i> Nuevos en la Axarquía · Plazas limitadas</div>
+      <h1>Te buscan en Google.<br><em>¿Te encuentran?</em></h1>
+      <p class="entrada">
+        Cada día alguien busca lo que tú vendes, aquí al lado. Si tu ficha no
+        aparece, no tiene fotos o el horario está mal, ese cliente acaba en el
+        negocio de enfrente. Lo arreglamos nosotros.
+      </p>
+      <div class="acciones">
+        <a href="#contacto" class="btn btn-p">Quiero que me encuentren →</a>
+        <a href="#precios" class="btn btn-b">Ver precios</a>
+      </div>
+      <div class="mini">🤝 Sin permanencia · Te atiende el fundador · Somos de Vélez-Málaga</div>
+    </div>
+
+    <div class="rev d2">
+      <div class="tel">
+        <div class="tel-m"><div class="tel-p">
+          <div class="tel-bar">
+            <div class="lupa">🔍</div>
+            <div class="txt">taller mecánico cerca</div>
+          </div>
+          <div class="res"><div class="res-n">Taller El Rápido</div>
+            <div class="res-e">★★★★★ <span style="color:#64748b">· 84 reseñas</span></div>
+            <div class="res-d">Abierto · Fotos del taller · Web</div></div>
+          <div class="res"><div class="res-n">Talleres Costa</div>
+            <div class="res-e">★★★★☆ <span style="color:#64748b">· 41 reseñas</span></div>
+            <div class="res-d">Abierto · Fotos · Cómo llegar</div></div>
+          <div class="res tuyo"><div class="res-n">Tu negocio</div>
+            <div class="res-e" style="color:#94a3b8">Sin reseñas · Sin fotos</div>
+            <div class="res-d">Horario sin confirmar</div></div>
+        </div></div>
+        <div class="eti a"><span class="pt" style="background:#ef4444"></span> Ahora</div>
+        <div class="eti b"><span class="pt" style="background:#10b981"></span> En 7 días</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ El problema ═══ -->
+<section class="probs" id="problema">
+  <div class="env">
+    <div class="sec-cab rev">
+      <span class="eyebrow">Lo que pasa hoy</span>
+      <h2>No es que no te busquen.<br>Es que no te ven.</h2>
+      <p class="sub">Cuatro cosas que hacen que un cliente que ya te estaba buscando acabe en otro sitio.</p>
+    </div>
+    <div class="rej">
+      <div class="tar rev"><div class="ico">📍</div>
+        <h3>Tu ficha está a medias</h3>
+        <p>Sin fotos, con el horario antiguo o con el teléfono de hace tres años. Quien la mira, duda. Y quien duda, no viene.</p></div>
+      <div class="tar rev d1"><div class="ico">💬</div>
+        <h3>Reseñas sin responder</h3>
+        <p>Te dejan una buena y no dices nada. Te dejan una mala y tampoco. Cualquiera que las lea ve un negocio que no está pendiente.</p></div>
+      <div class="tar rev d2"><div class="ico">📱</div>
+        <h3>Tu web no se ve en el móvil</h3>
+        <p>Casi todo el mundo te busca desde el teléfono. Si hay que hacer zoom para leer, se van antes de encontrar tu dirección.</p></div>
+      <div class="tar rev d3"><div class="ico">🌐</div>
+        <h3>O directamente no tienes</h3>
+        <p>Y el que quiere ver tu carta, tus trabajos o tus precios se queda sin saberlo. Con lo fácil que es enseñárselo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Cómo funciona ═══ -->
+<section id="como">
+  <div class="env">
+    <div class="sec-cab rev">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>Tú sigues con lo tuyo.<br>De esto nos ocupamos nosotros.</h2>
+      <p class="sub">Sin reuniones eternas ni palabras raras. Tres pasos y ya está funcionando.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso rev"><div class="paso-in">
+        <h3>Nos escribes</h3>
+        <p>Miramos cómo sale tu negocio hoy en Google y te decimos qué le falta. Sin compromiso y sin coste.</p></div></div>
+      <div class="paso rev d1"><div class="paso-in">
+        <h3>Lo montamos</h3>
+        <p>Vamos una vez a hacer las fotos, dejamos tu ficha completa y, si toca, tu web lista. En 7 o 14 días según el plan.</p></div></div>
+      <div class="paso rev d2"><div class="paso-in">
+        <h3>Lo mantenemos</h3>
+        <p>Cada mes: publicaciones, respuesta a las reseñas nuevas y un informe de una página con los datos que da Google.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Precios ═══ -->
+<section class="precios" id="precios">
+  <div class="env">
+    <div class="sec-cab rev">
+      <span class="eyebrow">Precios</span>
+      <h2>Claros, y en la web</h2>
+      <p class="sub">Sin "pide presupuesto". Un pago para montarlo y una cuota mensual para mantenerlo.</p>
+    </div>
+
+    <div class="planes">
+      <div class="plan rev">
+        <div class="plan-n">Que te encuentren</div>
+        <div class="plan-d">Para empezar por lo que más se nota</div>
+        <div class="plan-p"><span class="num">350 €</span><span class="un">de arranque</span></div>
+        <div class="plan-m">y luego <b>69 €/mes</b></div>
+        <ul class="lista">
+          <li>Tu ficha de Google creada u optimizada</li>
+          <li>10-15 fotos hechas por nosotros en tu local</li>
+          <li>Respuesta a las reseñas que ya tienes</li>
+          <li>Cartel con QR para pedir reseñas</li>
+          <li>Cada mes: 4 publicaciones e informe</li>
+        </ul>
+        <div style="font-size:.86rem;color:var(--gris);margin-bottom:16px">Listo en 7 días</div>
+        <a href="#contacto" class="btn btn-b">Me interesa</a>
+      </div>
+
+      <div class="plan top rev d1">
+        <div class="lazo">El más completo</div>
+        <div class="plan-n">Presencia completa</div>
+        <div class="plan-d">Ficha, web y redes, todo a la vez</div>
+        <div class="plan-p"><span class="num">890 €</span><span class="un">de arranque</span></div>
+        <div class="plan-m">y luego <b>189 €/mes</b></div>
+        <ul class="lista">
+          <li><b>Todo lo del plan anterior</b></li>
+          <li>Web de una página, pensada para el móvil</li>
+          <li>Tu dominio propio, a tu nombre</li>
+          <li>Instagram y Facebook puestos a punto</li>
+          <li>Cada mes: 8 publicaciones y una llamada</li>
+        </ul>
+        <div style="font-size:.86rem;color:var(--gris);margin-bottom:16px">Listo en 14 días</div>
+        <a href="#contacto" class="btn btn-p">Me interesa</a>
+      </div>
+    </div>
+
+    <div class="hon rev d2">
+      <h3>🙌 Lo que NO hacemos (mejor decirlo ya)</h3>
+      <div class="hon-g">
+        <div class="hon-i"><span class="x">✕</span> No publicamos todos los días</div>
+        <div class="hon-i"><span class="x">✕</span> No contestamos tus mensajes privados</div>
+        <div class="hon-i"><span class="x">✕</span> No gestionamos tus reservas ni tu teléfono</div>
+        <div class="hon-i"><span class="x">✕</span> No hacemos tienda online</div>
+        <div class="hon-i"><span class="x">✕</span> <b>No te prometemos salir el primero en Google</b></div>
+        <div class="hon-i"><span class="x">✕</span> <b>Ni cuántos clientes te van a entrar</b></div>
+      </div>
+      <p style="margin-top:18px;font-size:.94rem;color:var(--tinta-sv)">
+        Eso no lo controla nadie, y quien te lo garantice te está vendiendo humo.
+        Lo que sí te garantizamos es <b>qué te entregamos y qué día</b>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Cercanía ═══ -->
+<section class="cerca">
+  <div class="mancha c1"></div>
+  <div class="env">
+    <div class="sec-cab rev">
+      <span class="eyebrow">Por qué nosotros</span>
+      <h2>Somos de aquí. Y acabamos de empezar.</h2>
+      <p class="sub">Lo decimos tal cual: eres de los primeros. Eso tiene sus ventajas.</p>
+    </div>
+    <div class="rej-c">
+      <div class="tar-c rev"><div class="ico">🏘️</div>
+        <h3>A diez minutos</h3>
+        <p>Nada de agencias a 500 km que te llaman por teléfono. Estamos en Vélez-Málaga.</p></div>
+      <div class="tar-c rev d1"><div class="ico">👋</div>
+        <h3>Hablas con el fundador</h3>
+        <p>Sin centralitas ni tickets de soporte. Escribes y te contesta la persona que lo hace.</p></div>
+      <div class="tar-c rev d2"><div class="ico">⏳</div>
+        <h3>Tenemos tiempo para ti</h3>
+        <p>Al empezar aceptamos pocos clientes a la vez. Los primeros se llevan toda la atención.</p></div>
+      <div class="tar-c rev d3"><div class="ico">🔓</div>
+        <h3>Sin permanencia</h3>
+        <p>Te das de baja avisando con 15 días. Y la web y el dominio son tuyos, te los llevas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Cierre ═══ -->
+<section class="cta" id="contacto">
+  <div class="env">
+    <div class="rev">
+      <span class="eyebrow">Empecemos</span>
+      <h2>Te decimos qué le falta a tu negocio.<br>Gratis y sin compromiso.</h2>
+      <p class="sub">
+        Escríbenos con el nombre de tu negocio. Miramos cómo sales hoy en Google
+        y te contamos qué cambiaríamos. Si te encaja, seguimos. Si no, te queda el diagnóstico.
+      </p>
+      <a href="mailto:vortex.s.l.booking@gmail.com?subject=Quiero%20que%20me%20encuentren%20en%20Google&body=Hola%2C%20soy%20de%20%5Bnombre%20del%20negocio%5D%20en%20%5Bciudad%5D.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20salgo%20en%20Google."
+         class="btn btn-p" style="font-size:16px;padding:16px 34px">✉️ Escríbenos ahora</a>
+      <div><a href="mailto:vortex.s.l.booking@gmail.com" class="correo">vortex.s.l.booking@gmail.com</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="env">
+    <p>© 2026 <b style="color:#fff">VORTEX S.L.</b> · Vélez-Málaga, Axarquía</p>
+    <p style="margin-top:6px"><a href="mailto:vortex.s.l.booking@gmail.com">vortex.s.l.booking@gmail.com</a></p>
+    <p class="otro">¿Tienes un bar o un chiringuito? También hacemos
+      <a href="../">vortexPOS</a>, nuestro sistema de comandas para hostelería.</p>
+  </div>
+</footer>
+
+<script>
+// Aparición al hacer scroll: sencillo y sin librerías.
+const obs = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+// La barra superior se marca al bajar
+addEventListener('scroll', ()=>{
+  document.getElementById('nav').classList.toggle('baja', scrollY>40);
+}, {passive:true});
+</script>
+
+</body>
+</html>
